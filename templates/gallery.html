@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Galeria</h2>
+
+{% with mensajes = get_flashed_messages() %}
+  {% if mensajes %}
+    <ul style="list-style: none; padding: 0;">
+    {% for m in mensajes %}
+      <li style="color: #ffffff; background-color: #ff66a3; display: inline-block; padding: 8px 16px; border-radius: 8px; margin-bottom: 15px;">{{ m }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<div>
+    {% if imagenes %}
+        <!-- el ciclo q pone las fotos solitas -->
+        {% for img in imagenes %}
+            <div style="border: 2px solid #ff66a3; display: inline-block; margin: 10px; padding: 10px; background-color: black;">
+                <img src="{{ url_for('uploaded_file', filename=img) }}" width="250" alt="foto" style="border-radius: 5px;">
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Aun no hay fotos. ¡Sube la primera con el boton "Subir Foto"!</p>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Subir una nueva pic</h2>
+
+{% with mensajes = get_flashed_messages() %}
+  {% if mensajes %}
+    <ul style="list-style: none; padding: 0;">
+    {% for m in mensajes %}
+      <li style="color: #ffffff; background-color: #ff66a3; display: inline-block; padding: 8px 16px; border-radius: 8px; margin-bottom: 15px;">{{ m }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form action="/upload" method="post" enctype="multipart/form-data" style="margin-top: 30px;">
+    <input type="file" name="file" accept="image/png, image/jpeg, image/gif, image/webp" required style="color: #ffb6c1; margin-bottom: 20px;">
+    <br>
+    <button type="submit" class="btn">Subir imagen</button>
+</form>
+{% endblock %}

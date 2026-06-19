@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria Kuromi</title>
+    <style>
+        /* Estilo darks/cute de kuromi */
+        body {
+            background-color: #1a1a1a; 
+            color: #ffb6c1; 
+            font-family: 'Comic Sans MS', sans-serif; 
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #000000;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 3px solid #ff66a3;
+        }
+        nav a {
+            color: #ffb6c1;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffffff; /* se pone blanco cuando pasas el mouse */
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        .btn {
+            background-color: #ff66a3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+        .btn:hover {
+            background-color: #ffb6c1;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Galeria</a>
+        <a href="/upload">Subir Foto</a>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
